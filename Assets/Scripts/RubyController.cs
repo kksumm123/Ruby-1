@@ -62,7 +62,7 @@ public class RubyController : MonoBehaviour
 
         rigidbody2D.MovePosition(position);
     }
-    public float speed = 3.0f;
+    public float speed = 10.0f;
 
 
     void ChangeHealth(int amount)
