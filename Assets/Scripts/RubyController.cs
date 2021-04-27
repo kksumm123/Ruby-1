@@ -5,16 +5,17 @@ using UnityEngine;
 public class RubyController : MonoBehaviour
 {
     public int maxHealth = 5;
-    int currentHealth;
+    public int currentHealth;
+    float posX, posY;
 
-    new Rigidbody2D rigidbody2D;
+    Rigidbody2D rigidbody2d;
 
     //public int health;
 
     void Start()
     {
-        rigidbody2D = GetComponent<Rigidbody2D>();
-        currentHealth = maxHealth;
+        rigidbody2d = GetComponent<Rigidbody2D>();
+        currentHealth = 1;
     }
 
     // 화면 갱신될때마다 호출됨 - git테스트중
@@ -56,16 +57,26 @@ public class RubyController : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
-        Vector2 position = rigidbody2D.position;
+        Vector2 position = rigidbody2d.position;
         position.x += speed * horizontal * Time.deltaTime;
         position.y += speed * vertical * Time.deltaTime;
-
-        rigidbody2D.MovePosition(position);
+        
+        posX = position.x;
+        posY = position.y;
+        rigidbody2d.MovePosition(position);
     }
     public float speed = 10.0f;
 
+    public float RubyX()
+    {
+        return posX;
+    }
+    public float RubyY()
+    {
+        return posY;
+    }
 
-    void ChangeHealth(int amount)
+    public void ChangeHealth(int amount)
     {
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         Debug.Log(currentHealth + "/" + maxHealth);
