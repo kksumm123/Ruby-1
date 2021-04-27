@@ -6,16 +6,15 @@ public class RubyController : MonoBehaviour
 {
     public int maxHealth = 5;
     public int currentHealth;
-    float posX, posY;
 
-    Rigidbody2D rigidbody2d;
+    new Rigidbody2D rigidbody2D;
 
     //public int health;
 
     void Start()
     {
-        rigidbody2d = GetComponent<Rigidbody2D>();
-        currentHealth = 1;
+        rigidbody2D = GetComponent<Rigidbody2D>();
+        currentHealth = maxHealth;
     }
 
     // 화면 갱신될때마다 호출됨 - git테스트중
@@ -57,24 +56,14 @@ public class RubyController : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
-        Vector2 position = rigidbody2d.position;
+        Vector2 position = rigidbody2D.position;
         position.x += speed * horizontal * Time.deltaTime;
         position.y += speed * vertical * Time.deltaTime;
-        
-        posX = position.x;
-        posY = position.y;
-        rigidbody2d.MovePosition(position);
-    }
-    public float speed = 10.0f;
 
-    public float RubyX()
-    {
-        return posX;
+        rigidbody2D.MovePosition(position);
     }
-    public float RubyY()
-    {
-        return posY;
-    }
+    public float speed = 3.0f;
+
 
     public void ChangeHealth(int amount)
     {
