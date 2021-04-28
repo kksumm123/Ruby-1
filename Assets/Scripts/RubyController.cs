@@ -7,6 +7,8 @@ public class RubyController : MonoBehaviour
     public int maxHealth = 5;
     public int currentHealth;
 
+    public int health { get { return currentHealth; } }
+
     private new Rigidbody2D rigidbody2D;
 
     public float timeInvincible = 2.0f;
