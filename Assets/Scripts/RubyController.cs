@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RubyController : MonoBehaviour
 {
+    public float speed = 3.0f;
+
     public int maxHealth = 5;
     public int health { get { return currentHealth; } }
     int currentHealth;
@@ -14,13 +16,13 @@ public class RubyController : MonoBehaviour
 
     new Rigidbody2D rigidbody2D;
 
+
     void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
     }
 
-    // 화면 갱신될때마다 호출됨 - git테스트중
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -48,8 +50,7 @@ public class RubyController : MonoBehaviour
                 isInvincible = false;
         }
     }
-    public float speed = 3.0f;
-
+    
 
     public void ChangeHealth(int amount)
     {
@@ -63,6 +64,6 @@ public class RubyController : MonoBehaviour
         }
 
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
-        Debug.Log(currentHealth + "/" + maxHealth);
+        Debug.Log("ü�� : " + currentHealth + "/" + maxHealth);
     }
 }

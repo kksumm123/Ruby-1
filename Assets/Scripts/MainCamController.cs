@@ -9,15 +9,13 @@ public class MainCamController : MonoBehaviour
 
     void Update()
     {
-        //Debug.Log(Time.deltaTime);
-            //(Ruby.transform.position + ", " + this.transform.position);
+        //Debug.Log(Ruby.transform.position + ", " + this.transform.position);
+
+        float timeCompensation = Time.deltaTime * 5;
 
         Vector2 dir = Ruby.transform.position - this.transform.position;
-        float timeCompensation = Time.deltaTime * 5;
+
         Vector2 moveVector = new Vector2(dir.x * timeCompensation, dir.y * timeCompensation);
         this.transform.Translate(moveVector);
-
-        //Vector2 posRuby = Ruby.transform.position;
-        //transform.position = new Vector3(posRuby.x, posRuby.y, posCamZ);
     }
 }
