@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class HealthCollectible : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D 충돌된대상)
+    private void OnTriggerStay2D(Collider2D other)
     {
-        RubyController controller = 충돌된대상.GetComponent<RubyController>();
+        RubyController controller = other.GetComponent<RubyController>();
 
         if (controller != null)
         {
