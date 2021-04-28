@@ -1154,7 +1154,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1180700620}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.24, y: 1.71, z: 0}
+  m_LocalPosition: {x: 3.66, y: 1.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1195,7 +1195,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1180700620}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58686b9f752c4134f9d3e71724ceb88d, type: 3}
+  m_Script: {fileID: 11500000, guid: b638386fb3115664f8e0ae917f24ff7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1812427384
@@ -1365,11 +1365,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1449052798794013632, guid: 4132107451011b6478c33d3f1c3d5a18, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.89
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 1449052798794013632, guid: 4132107451011b6478c33d3f1c3d5a18, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.62
+      value: 0.37
       objectReference: {fileID: 0}
     - target: {fileID: 1449052798794013632, guid: 4132107451011b6478c33d3f1c3d5a18, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1406,6 +1406,10 @@ PrefabInstance:
     - target: {fileID: 1449052798794013634, guid: 4132107451011b6478c33d3f1c3d5a18, type: 3}
       propertyPath: m_Name
       value: Ruby
+      objectReference: {fileID: 0}
+    - target: {fileID: 1449052798794013646, guid: 4132107451011b6478c33d3f1c3d5a18, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4132107451011b6478c33d3f1c3d5a18, type: 3}
