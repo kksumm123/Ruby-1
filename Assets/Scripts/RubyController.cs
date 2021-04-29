@@ -43,9 +43,11 @@ public class RubyController : MonoBehaviour
             lookDirection.Normalize();
         }
 
-        //animator.SetFloat("Look X", lookDirection.x);
-        //animator.SetFloat("Look Y", lookDirection.y);
-        //animator.SetFloat("Speed", move.magnitude);
+        animator.SetFloat("Look X", lookDirection.x);
+        animator.SetFloat("Look Y", lookDirection.y);
+        animator.SetFloat("Speed", move.magnitude);
+
+        //Debug.Log($"x, y, move.magnitude : {move.x}, {move.y}, {move.magnitude}");
 
         Vector2 position = rigidbody2d.position;
 
@@ -73,13 +75,14 @@ public class RubyController : MonoBehaviour
             if (isInvincible)
                 return;
 
+            animator.SetTrigger("Hit");
             isInvincible = true;
             invincibleTimer = timeInvincible;
         }
 
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
 
-        UIHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
+        //UIHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
     }
 
     private void Launch()
